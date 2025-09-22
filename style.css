@@ -1,40 +1,122 @@
-*{
+* {
     margin: 0;
     padding: 0;
-}
-body{
-    min-height: 100vh;
-    background-image: url(Images/culinary.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-nav{
-    background-color: black;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-}
-nav ul{
-    width: 100%;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-nav li{
-    height: 50px;
-}
-nav a{
-    height: 100%;
-    padding: 0 30px;
     text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(Images/Culinary.jpg);
+    background-color: #1b1b1b;
+}
+
+header {
+    height: 100vh;
+    width: 100vw;   
+}
+
+.navbar {
+    position: absolute;
+    padding: 15px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(27, 27, 27, 0.5);
+    backdrop-filter: blur(7px);
+}
+
+.navbar a {
     color: white;
 }
-nav a:hover{
-    background-color: lightgray;
+
+.navbar .logo {
+    padding-left: 10px;
+    font-size: 2rem;
+    font-weight: bold;
 }
-nav li:first-child{
-    margin-right: auto;
+
+.navbar .nav-links ul {
+    display: flex;
+}
+
+.navbar .nav-links ul li {
+    margin: 0 20px;
+    font-size: 17px;
+}
+
+.navbar .nav-links ul li a {
+    padding: 8px 8px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.navbar .nav-links ul li a:hover {
+    background-color: #1b1b1b;
+}
+
+.navbar .nav-links ul li.active a {
+    color: greenyellow;
+    background-color: #1b1b1b;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.navbar .menu-hamburger {
+    color:white;
+    font-size: 48px;
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 50px;
+    width: 35px;
+}
+
+@media screen and (max-width: 900px) {
+    .navbar {
+        padding: 0;
+        background: transparent;
+        backdrop-filter: none;
+    }
+
+    .navbar .logo {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+
+    .navbar .menu-hamburger {
+        display: block;
+    }
+
+   .nav-links {
+        top: 0;
+        left: 0;
+        position: absolute;
+        backdrop-filter: blur(7px);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+   }
+
+   .nav-links.mobile-menu {
+        margin-left: 0;
+   }
+
+   .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+   }
+
+   .navbar .nav-links ul li {
+        margin: 45px 0;
+        font-size: 1.2em;
+   }
 }
