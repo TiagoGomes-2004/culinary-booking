@@ -6,9 +6,12 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Playfair Display", serif;
     background-image: url(Images/Culinary.jpg);
-    background-color: #1b1b1b;
+    background-size: cover no-repeat;
+    background-color: rgba(27, 27, 27, 0.8);
+    background-blend-mode: darken;
+    overflow: hidden;
 }
 
 header {
@@ -18,14 +21,14 @@ header {
 
 .navbar {
     position: absolute;
-    padding: 15px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     box-sizing: border-box;
     background: rgba(27, 27, 27, 0.5);
-    backdrop-filter: blur(7px);
+    border-bottom: 1px solid #ccc;
 }
 
 .navbar a {
@@ -35,7 +38,9 @@ header {
 .navbar .logo {
     padding-left: 10px;
     font-size: 2rem;
-    font-weight: bold;
+    font-family: "Birthstone", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .navbar .nav-links ul {
@@ -54,12 +59,12 @@ header {
 }
 
 .navbar .nav-links ul li a:hover {
-    background-color: #1b1b1b;
+    background-color: rgba(27, 27, 27, 0.5);
 }
 
 .navbar .nav-links ul li.active a {
     color: greenyellow;
-    background-color: #1b1b1b;
+    background-color: rgba(27, 27, 27, 0.5);
     border-radius: 8px;
     font-weight: 600;
 }
@@ -74,7 +79,65 @@ header {
     width: 35px;
 }
 
+.content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-index {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.text-index hr {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid white;
+}
+
+.text-index h1 {
+    color: white;
+    font-size: 8rem;
+    font-family: "Birthstone", cursive;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1;
+    padding-bottom: 40px;
+}
+
+.text-index p {
+    padding-top: 20px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.chef-img {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.chef-img img {
+    max-width: 125%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+
 @media screen and (max-width: 900px) {
+    body, html {
+        overflow: hidden;
+    }
+
     .navbar {
         padding: 0;
         background: transparent;
@@ -119,4 +182,42 @@ header {
         margin: 45px 0;
         font-size: 1.2em;
    }
+
+   .content {
+        flex-direction: column;
+        height: 100vh; 
+   }
+
+   .text-index {
+        width: 100%;
+        height: auto;
+        padding: 40px 20px;
+        padding-top: 30%;
+        text-align: center;
+        flex: 1;
+    }
+
+    .text-index h1 {
+        font-size: 3.5rem;
+        padding-bottom: 20px;
+    }
+
+    .text-index p {
+        font-size: 1.2rem;
+    }
+
+    .chef-img {
+        width: 100%;
+        height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .chef-img img {
+        height: 125%;
+        width: auto;
+        max-width: none;
+    }
+
 }
